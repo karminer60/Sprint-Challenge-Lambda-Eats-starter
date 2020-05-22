@@ -10,10 +10,7 @@ const formSchema = yup.object().shape({
     
   toppings: yup.string().required('The role is a required field'),
     
-  password: yup.string()
-    .trim()
-    .min(5, 'The password must be at least five characters long')
-    .required('The password is a required field'),
+  size: yup.string().required('The role is a required field'),
 })
 
 export default formSchema

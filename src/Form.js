@@ -14,13 +14,15 @@ export default function Form(props) {
     } = props
   
     return (
-    <Link to={`/`}>
+        
+    
       <form className='form container' onSubmit={onSubmit}>
         <div className='form-group submit'>
+        <Link to={'/'}> Home</Link>
           <h2>Create your Pizza</h2>
   
          
-          <button disabled={disabled}>submit</button>
+          <button disabled={disabled}>Add to Order</button>
   
           <div className='errors'>
             
@@ -117,7 +119,7 @@ export default function Form(props) {
          
         </div>
       </form>
-      </Link>
+     
     )
   }
   

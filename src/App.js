@@ -13,6 +13,7 @@ import {
 import React, { useState, useEffect } from 'react'
 import * as yup from 'yup'
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 const initialFormValues = {
  
@@ -55,6 +56,7 @@ export default function App() {
     axios.get('http://localhost:4000/friends')
       .then(res => {
         setUsers(res.data)
+        console.log(res.data)
       })
       .catch(err => {
         debugger
@@ -135,7 +137,7 @@ export default function App() {
       size: formValues.size,
      
       
-      hobbies: Object.keys(formValues.hobbies)
+      toppings: Object.keys(formValues.toppings)
         .filter(topping => formValues.toppings[topping] === true)
       
     
@@ -162,31 +164,44 @@ export default function App() {
     <div className='container'>
       <>
       <h1>Lambda Eats</h1>
-      <p>Please Choose your pizza</p>
-      <img src='./pizza.png' alt='pizza'/>
+      
+      <img src='src/pizza.png' alt='pizza'/>
       </>
-      <Switch>
+      
+      <Link to={'/pizza'}>Build Your Pizza Here</Link>
+        <Switch>
 
-      <Route path='/pizza'>
-        <Form
-          values={formValues}
-          onInputChange={onInputChange}
-          onSubmit={onSubmit}
+        <Route path='/pizza'>
+          <Form
+            values={formValues}
+            onInputChange={onInputChange}
+            onSubmit={onSubmit}
         
-          disabled={disabled}
-          errors={formErrors}
-          onCheckboxChange={onCheckboxChange}
-        />
+            disabled={disabled}
+            errors={formErrors}
+            onCheckboxChange={onCheckboxChange}
+          />
 
-        {
-          users.map(user => {
-            return (
-              <User key={user.id} details={user} />
-            )
-          })
-        }
-      </Route>
-      </Switch>
+          {
+            users.map(user => {
+              return (
+                <User key={user.id} details={user} />
+              )
+            })
+          }
+        </Route>
+
+        <Route path='/'>
+          
+        </Route>
+
+
+        </Switch>
+
+        
+
+      
+      
     </div>
   )
 }
