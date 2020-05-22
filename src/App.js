@@ -162,11 +162,12 @@ export default function App() {
  
   return (
     <div className='container'>
-      <>
+      
       <h1>Lambda Eats</h1>
       
-      <img src='src/pizza.png' alt='pizza'/>
-      </>
+      <img src='/pizza.png' alt='pizza'/>
+      
+      <br/>
       
       <Link to={'/pizza'}>Build Your Pizza Here</Link>
         <Switch>
