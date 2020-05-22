@@ -10,6 +10,33 @@ import {
 } from 'react-router-dom';
 
 import React, { useState, useEffect } from 'react'
+import * as yup from 'yup'
+import axios from 'axios';
+
+const initialFormValues = {
+ 
+  username: '',
+  email: '',
+
+  password: '',
+  
+  role: '',
+ 
+  civil: '',
+  
+  termsOfUse: false,
+    
+  
+}
+const initialFormErrors = {
+  username: '',
+  email: '',
+  password: '',
+  role: '',
+  civil: '',
+}
+const initialUsers = []
+const initialDisabled = true
 
 export default function App() {
   const [users, setUsers] = useState(initialUsers)
