@@ -163,32 +163,29 @@ export default function App() {
       <>
       <h1>Lambda Eats</h1>
       <p>Please Choose your pizza</p>
+      <img src='./pizza.png' alt='pizza'/>
       </>
-
-      <Form
-        values={formValues}
-        onInputChange={onInputChange}
-        onSubmit={onSubmit}
-        
-        disabled={disabled}
-        errors={formErrors}
-        onCheckboxChange={onCheckboxChange}
-      />
-
-      {
-        users.map(user => {
-          return (
-            <User key={user.id} details={user} />
-          )
-        })
-      }
-
       <Switch>
 
-        <Route path='/'>
-          
-        </Route>
+      <Route path='/pizza'>
+        <Form
+          values={formValues}
+          onInputChange={onInputChange}
+          onSubmit={onSubmit}
+        
+          disabled={disabled}
+          errors={formErrors}
+          onCheckboxChange={onCheckboxChange}
+        />
 
+        {
+          users.map(user => {
+            return (
+              <User key={user.id} details={user} />
+            )
+          })
+        }
+      </Route>
       </Switch>
     </div>
   )

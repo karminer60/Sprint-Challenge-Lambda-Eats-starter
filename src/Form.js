@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 export default function Form(props) {
 
@@ -13,10 +14,10 @@ export default function Form(props) {
     } = props
   
     return (
-        //<Link to={`/pizza`}>
+    <Link to={`/`}>
       <form className='form container' onSubmit={onSubmit}>
         <div className='form-group submit'>
-          <h2>Add a User</h2>
+          <h2>Create your Pizza</h2>
   
          
           <button disabled={disabled}>submit</button>
@@ -116,7 +117,7 @@ export default function Form(props) {
          
         </div>
       </form>
-      //</Link>
+      </Link>
     )
   }
   
