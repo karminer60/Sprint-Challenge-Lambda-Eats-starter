@@ -13,7 +13,7 @@ export default function Form(props) {
     } = props
   
     return (
-        <Link to={`/pizza`}>
+        //<Link to={`/pizza`}>
       <form className='form container' onSubmit={onSubmit}>
         <div className='form-group submit'>
           <h2>Add a User</h2>
@@ -25,7 +25,7 @@ export default function Form(props) {
             
             <div>{errors.username}</div>
             <div>{errors.email}</div>
-            <div>{errors.password}</div>
+           
             <div>{errors.role}</div>
             <div>{errors.civil}</div>
           </div>
@@ -35,7 +35,7 @@ export default function Form(props) {
           <h4>General information</h4>
   
           
-          <label>Username&nbsp;
+          <label>Name&nbsp;
             <input
               value={values.username}
               onChange={onInputChange}
@@ -44,36 +44,29 @@ export default function Form(props) {
             />
           </label>
   
-          <label>Email
+          <label>Special Instructions
             <input
-              value={values.email}
+              value={values.special}
               onChange={onInputChange}
-              name='email'
-              type='email'
+              name='special'
+              type='text'
             />
           </label>
   
-          <label>Password
-            <input
-              value={values.password}
-              onChange={onInputChange}
-              name='password'
-              type='password'
-            />
-          </label>
+          
   
          
-          <label>Role
+          <label>Pizza Size
             <select
               onChange={onInputChange}
-              value={values.role}
-              name='role'
+              value={values.size}
+              name='size'
             >
               <option value=''>- Select an option -</option>
-              <option value='Student'>Student</option>
-              <option value='Alumni'>Alumni</option>
-              <option value='Instructor'>Instructor</option>
-              <option value='TL'>Team Lead</option>
+              <option value='Small'>Small</option>
+              <option value='Medium'>Medium</option>
+              <option value='Large'>Large</option>
+              <option value='Extra-Large'>Extra-Large</option>
             </select>
           </label>
   
@@ -100,22 +93,48 @@ export default function Form(props) {
         </div>
   
         <div className='form-group checkboxes'>
-          <h4>Terms of Use</h4>
-  
-        
-          <label>Terms of Use
-            <input
-              type='checkbox'
-              name='termsOfUse'
-              checked={values.termsOfUse.terms}
-              onChange={onCheckboxChange}
-            />
-          </label>
+        <h4>Toppings</h4>
+
+            <label>Mushrooms
+                <input
+                    type='checkbox'
+                    name='mushrooms'
+                    checked={values.toppings.mushrooms}
+                    onChange={onCheckboxChange}
+                />
+            </label>
+
+            <label>Pinapples
+                <input
+                    type='checkbox'
+                    name='pinapples'
+                    checked={values.toppings.pineapples}
+                    onChange={onCheckboxChange}
+                />
+            </label>
+
+            <label>Salami
+                <input
+                    type='checkbox'
+                    name='salami'
+                    checked={values.toppings.salami}
+                    onChange={onCheckboxChange}
+                />
+            </label>
+
+            <label>Jalapenos
+                <input
+                    type='checkbox'
+                    name='jalapenos'
+                    checked={values.toppings.jalapenos}
+                    onChange={onCheckboxChange}
+                />
+            </label>
   
          
         </div>
       </form>
-      </Link>
+      //</Link>
     )
   }
   

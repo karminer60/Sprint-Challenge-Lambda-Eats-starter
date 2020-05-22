@@ -1,6 +1,7 @@
 
 import Form from './Form.js'
 import formSchema from './formSchema.js'
+import User from './Form.js'
 import {
   useParams,
   NavLink,
@@ -15,24 +16,27 @@ import axios from 'axios';
 
 const initialFormValues = {
  
-  name: '',
-  email: '',
+  username: '',
+  special: '',
 
-  password: '',
-  
-  role: '',
+  size: '',
  
   civil: '',
   
-  termsOfUse: false,
+  toppings: {
+    mushrooms: false,
+    pinapples: false,
+    salami: false,
+    jalapenos:false
+  },
     
   
 }
 const initialFormErrors = {
-  name: '',
+  username: '',
   email: '',
-  password: '',
-  role: '',
+  
+  size: '',
   civil: '',
 }
 const initialUsers = []
@@ -110,12 +114,15 @@ export default function App() {
     const { checked } = evt.target
 
     setFormValues({
-     
-      ...formValues,
-    
-        
-      [name]: checked, 
       
+      ...formValues,
+      
+      toppings: {
+        
+        ...formValues.hobbies,
+        
+        [name]: checked,  
+      }
     })
   }
 
@@ -125,10 +132,13 @@ export default function App() {
     const newUser = {
       username: formValues.username.trim(),
       email: formValues.email.trim(),
-      role: formValues.role,
+      size: formValues.size,
       civil: formValues.civil,
       
-      termsOfUse: formValues.termsOfUse
+      hobbies: Object.keys(formValues.hobbies)
+        .filter(topping => formValues.toppings[topping] === true)
+      
+    
     }
   
     postNewUser(newUser)
@@ -173,7 +183,7 @@ export default function App() {
       <Switch>
 
         <Route path='/'>
-          <Form movies={movieList} />
+          <Form  />
         </Route>
 
       </Switch>
