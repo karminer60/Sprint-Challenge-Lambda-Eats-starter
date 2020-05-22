@@ -15,7 +15,7 @@ import axios from 'axios';
 
 const initialFormValues = {
  
-  username: '',
+  name: '',
   email: '',
 
   password: '',
@@ -29,7 +29,7 @@ const initialFormValues = {
   
 }
 const initialFormErrors = {
-  username: '',
+  name: '',
   email: '',
   password: '',
   role: '',
@@ -173,7 +173,7 @@ export default function App() {
       <Switch>
 
         <Route path='/'>
-          <MovieList movies={movieList} />
+          <Form movies={movieList} />
         </Route>
 
       </Switch>

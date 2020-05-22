@@ -13,6 +13,7 @@ export default function Form(props) {
     } = props
   
     return (
+        <Link to={`/pizza`}>
       <form className='form container' onSubmit={onSubmit}>
         <div className='form-group submit'>
           <h2>Add a User</h2>
@@ -114,6 +115,7 @@ export default function Form(props) {
          
         </div>
       </form>
+      </Link>
     )
   }
   
