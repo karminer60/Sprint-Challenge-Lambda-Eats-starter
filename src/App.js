@@ -1,7 +1,7 @@
 
 import Form from './Form.js'
 import formSchema from './formSchema.js'
-import User from './Form.js'
+import User from './User.js'
 import {
   useParams,
   NavLink,
@@ -157,10 +157,13 @@ export default function App() {
         setDisabled(!valid)
       })
   }, [formValues])
-
+ 
   return (
     <div className='container'>
-      <header><h1>User App</h1></header>
+      <>
+      <h1>Lambda Eats</h1>
+      <p>Please Choose your pizza</p>
+      </>
 
       <Form
         values={formValues}
@@ -183,7 +186,7 @@ export default function App() {
       <Switch>
 
         <Route path='/'>
-          <Form  />
+          
         </Route>
 
       </Switch>
