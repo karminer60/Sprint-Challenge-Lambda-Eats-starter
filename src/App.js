@@ -21,7 +21,7 @@ const initialFormValues = {
 
   size: '',
  
-  civil: '',
+  
   
   toppings: {
     mushrooms: false,
@@ -37,7 +37,7 @@ const initialFormErrors = {
   email: '',
   
   size: '',
-  civil: '',
+  
 }
 const initialUsers = []
 const initialDisabled = true
@@ -131,9 +131,9 @@ export default function App() {
 
     const newUser = {
       username: formValues.username.trim(),
-      email: formValues.email.trim(),
+      special: formValues.special.trim(),
       size: formValues.size,
-      civil: formValues.civil,
+     
       
       hobbies: Object.keys(formValues.hobbies)
         .filter(topping => formValues.toppings[topping] === true)

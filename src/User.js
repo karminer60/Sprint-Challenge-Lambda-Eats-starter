@@ -16,7 +16,7 @@ function User({ details }) {
       {
         !!details.terms && !!details.terms.length &&
         <div>
-          Terms of Use:
+          Toppings:
           <ul>
             {details.termsOfUse.map((like, idx) => <li key={idx}>{like}</li>)}
             

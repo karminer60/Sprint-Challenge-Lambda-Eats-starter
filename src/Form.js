@@ -24,10 +24,10 @@ export default function Form(props) {
           <div className='errors'>
             
             <div>{errors.username}</div>
-            <div>{errors.email}</div>
+            <div>{errors.special}</div>
            
             <div>{errors.role}</div>
-            <div>{errors.civil}</div>
+            
           </div>
         </div>
   
@@ -71,25 +71,7 @@ export default function Form(props) {
           </label>
   
           
-          <label>Single
-            <input
-              type='radio'
-              name='civil'
-              value='Single'
-              onChange={onInputChange}
-            
-            />
-          </label>
-  
-          <label>Married
-            <input
-              type='radio'
-              name='civil'
-              value='Married'
-              onChange={onInputChange}
-              
-            />
-          </label>
+          
         </div>
   
         <div className='form-group checkboxes'>
