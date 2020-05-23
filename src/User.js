@@ -8,17 +8,18 @@ function User({ details }) {
   return (
     <div className='friend container'>
       <h2>{details.username}</h2>
-      <p>Special Instructions: {details.email}</p>
+      <p>Special Instructions: {details.special}</p>
       
       <p>Size: {details.size}</p>
+     
       
 
       {
-        !!details.terms && !!details.terms.length &&
+        !!details.toppings && !!details.toppings.length &&
         <div>
           Toppings:
           <ul>
-            {details.termsOfUse.map((like, idx) => <li key={idx}>{like}</li>)}
+            {details.toppings.map((topping, idx) => <li key={idx}>{topping}</li>)}
             
           </ul>
         </div>

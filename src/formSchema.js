@@ -8,8 +8,6 @@ const formSchema = yup.object().shape({
     .required('The username is a required field'),
   special: yup.string(),
     
-  toppings: yup.string().required('The role is a required field'),
-    
   size: yup.string().required('The role is a required field'),
 })
 

@@ -53,7 +53,7 @@ export default function App() {
 
   const getUsers = () => {
     
-    axios.get('http://localhost:4000/friends')
+    axios.get('http://localhost:4000/orders')
       .then(res => {
         setUsers(res.data)
         console.log(res.data)
@@ -65,7 +65,7 @@ export default function App() {
 
   const postNewUser= newUser=> {
    
-    axios.post('http://localhost:4000/friends', newUser)
+    axios.post('http://localhost:4000/orders', newUser)
       .then(res => {
         setUsers([res.data, ...users])
         
@@ -121,7 +121,7 @@ export default function App() {
       
       toppings: {
         
-        ...formValues.hobbies,
+        ...formValues.toppings,
         
         [name]: checked,  
       }
