@@ -13,8 +13,15 @@ describe('Form inputs', () => {
    
 
     it('checkbox verification', ()=>{
-        cy.get('[type="checkbox"]').check()
-            
+        
+        cy.get('input[name="mushrooms"]').check()
+            .should('have.attr', 'checked')
+        cy.get('input[name="pineapples"]').check()
+            .should('have.attr', 'checked')
+        cy.get('input[name="salami"]').check()
+            .should('have.attr', 'checked')
+        cy.get('input[name="jalapenos"]').check()
+            .should('have.attr', 'checked')
     })
 
     it('submit form verification', ()=>{
